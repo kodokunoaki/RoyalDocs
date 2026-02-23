@@ -97,7 +97,7 @@ Paths follow document nesting: `keyA/keyB/keyC` maps to `content["keyA"]["keyB"]
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/kodokunoaki/amicon-test.git
+git clone https://github.com/kodokunoaki/RoyalDocs.git
 cd documentarium
 ```
 
@@ -130,7 +130,7 @@ docker compose down -v
 
 **Single `content` JSON column.** The entire document is stored as a single `JSON` column in PostgreSQL. Navigating nested keys (`keyA/keyB/keyC`) is handled in application code rather than with generated columns or JSONB operators. This keeps the schema simple and avoids coupling the API contract to the database query language.
 
-**Explicit dict copy for JSON mutation.** SQLAlchemy 2's async session does not track in-place mutations to JSON fields. Every path write operation copies `doc.content` into a new `dict`, mutates it, and reassigns it so the ORM registers the change and emits an `UPDATE`.
+**Explicit dict copy for JSON mutation.** SQLAlchemy 2's async session does not track in-place mutations to JSON fields. Every path write operation **deep** copies `doc.content` into a new `dict`, mutates it, and reassigns it so the ORM registers the change and emits an `UPDATE`.
 
 **PUT intentionally omitted.** A full replacement of a document can have destructive consequences. `PATCH` on the root or a specific path is a safer default. PUT can be added later behind a flag or a specific `force=true` query parameter.
 
