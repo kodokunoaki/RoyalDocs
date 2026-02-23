@@ -74,9 +74,9 @@ Paths follow document nesting: `keyA/keyB/keyC` maps to `content["keyA"]["keyB"]
 
 | Method | Path | Description |
 |---|---|---|
-| `GET` | `/docs/{id}/path/{path}` | Read a nested block at the given key path |
-| `PATCH` | `/docs/{id}/path/{path}` | Replace a nested block at the given key path |
-| `DELETE` | `/docs/{id}/path/{path}` | Remove a nested block at the given key path |
+| `GET` | `/docs/{id}/path` | Read a nested block at the given key path |
+| `PATCH` | `/docs/{id}/path` | Replace a nested block at the given key path |
+| `DELETE` | `/docs/{id}/path` | Remove a nested block at the given key path |
 
 #### Diff
 
