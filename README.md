@@ -98,7 +98,7 @@ Paths follow document nesting: `keyA/keyB/keyC` maps to `content["keyA"]["keyB"]
 
 ```bash
 git clone https://github.com/kodokunoaki/RoyalDocs.git
-cd documentarium
+cd RoyalDocs
 ```
 
 ### 2. Configure environment
