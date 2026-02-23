@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name
 """init tables
 
 Revision ID: 16af29010fce
@@ -11,7 +12,6 @@ from typing import Sequence, Union
 from alembic import op
 import sqlalchemy as sa
 
-# pylint: disable=invalid-name
 
 # revision identifiers, used by Alembic.
 revision: str = "16af29010fce"
