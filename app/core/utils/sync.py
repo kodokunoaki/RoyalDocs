@@ -22,7 +22,7 @@ async def sync_loop() -> None:
         except asyncio.CancelledError:
             logger.info("Sync loop cancelled, shutting down.")
             raise
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             logger.exception(
                 "Sync task failed, will retry in %s s.",
                 settings.SYNC_INTERVAL_SECONDS,

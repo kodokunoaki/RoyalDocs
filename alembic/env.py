@@ -1,3 +1,8 @@
+"""
+This file configures the Alembic migration context, connecting to the database
+using application settings and loading all SQLAlchemy models for autogeneration.
+"""
+
 import asyncio
 from logging.config import fileConfig
 from typing import Any

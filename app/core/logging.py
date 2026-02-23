@@ -3,7 +3,7 @@
 import logging
 
 
-class CustomFormatter(logging.Formatter):
+class CustomFormatter(logging.Formatter):  # pylint: disable=missing-class-docstring
     LOG_LEVEL = "[%(levelname)s]"
     FORMAT = " %(asctime)s [%(filename)s:%(lineno)d] " "%(message)s"
     FORMATS = {

@@ -27,7 +27,7 @@ class User(Base):  # pylint: disable=missing-class-docstring
     )
 
 
-class Document(Base):
+class Document(Base):  # pylint: disable=missing-class-docstring
     __tablename__ = "documents"
 
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
